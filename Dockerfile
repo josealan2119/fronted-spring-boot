@@ -1,0 +1,12 @@
+# Etapa de build de Angular
+FROM node:18-alpine AS builder
+WORKDIR /app
+COPY . .
+RUN npm install
+RUN npm run build -- --configuration production
+
+# Etapa final: servir con NGINX
+FROM nginx:alpine
+COPY --from=builder /app/dist/<nombre-app> /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

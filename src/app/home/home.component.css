@@ -1,0 +1,183 @@
+/* Botones uniformes */
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.btn-primary {
+  background-color: #1976d2;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #125ea4;
+}
+
+.btn-secondary {
+  background-color: #2196f3;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #1565c0;
+}
+
+.btn-reaction {
+  background-color: #e3f2fd;
+  color: #1976d2;
+  margin-right: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  font-weight: 500;
+  border-radius: 999px;
+}
+
+.btn-reaction:hover {
+  background-color: #bbdefb;
+}
+
+.btn-delete {
+  background: transparent;
+  color: #c62828;
+  font-size: 1.2rem;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.btn-delete:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Inputs estilizados */
+.tweet-input,
+.comment-input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1.5px solid #bbb;
+  transition: border-color 0.3s ease;
+}
+
+.tweet-input:focus,
+.comment-input:focus {
+  border-color: #1976d2;
+  outline: none;
+}
+
+/* Container flex para formularios */
+.tweet-form,
+.comment-form {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  align-items: center;
+}
+
+/* Otros estilos */
+.tweets-container {
+  max-width: 700px;
+  margin: auto;
+  background-color: #ffffff;
+  padding: 1.5rem 2rem;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.tweet-card {
+  background-color: #f0f5ff;
+  border-radius: 14px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.15);
+}
+
+.tweet-text {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #0d47a1;
+  margin: 0.7rem 0 1rem 0;
+}
+
+.reactions {
+  margin-bottom: 1rem;
+}
+
+.comment-box {
+  background: white;
+  border-left: 4px solid #1976d2;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.8rem;
+  border-radius: 8px;
+  position: relative;
+}
+
+.comment-user {
+  font-weight: 700;
+  color: #1976d2;
+}
+
+.comment-text {
+  margin: 0.3rem 0 0 0;
+  color: #444;
+}
+
+.welcome {
+  font-size: 1.6rem;
+  color: #1565c0;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.username {
+  color: #0d47a1;
+}
+
+/* en el CSS del componente o global */
+.panel {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 10px;
+}
+.panel button {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.active {
+  background-color: #444;
+  color: white;
+}
+
+.nav-bar {
+  display: flex;                    /* pone los enlaces en línea, uno al lado del otro */
+  justify-content: center;          /* centra la barra de navegación horizontalmente */
+  gap: 1.5rem;                     /* separa los enlaces entre sí con espacio */
+  margin-bottom: 2rem;             /* espacio debajo para separar del contenido siguiente */
+}
+
+.nav-bar a {
+  color: #1976d2;                  /* color azul para los enlaces */
+  text-decoration: none;           /* quita el subrayado */
+  font-weight: 600;                /* texto un poco más negrita */
+  padding: 0.6rem 1.2rem;          /* espacio interno alrededor del texto para hacerlo botón */
+  border-radius: 8px;              /* bordes redondeados para dar forma de botón */
+  transition: background-color 0.3s ease; /* transición suave al cambiar colores */
+}
+
+/* Cuando el enlace está activo o cuando pasas el mouse encima */
+.nav-bar a.active,
+.nav-bar a:hover {
+  background-color: #1976d2;       /* fondo azul sólido */
+  color: white;                    /* texto blanco */
+}

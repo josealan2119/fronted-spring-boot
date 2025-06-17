@@ -1,55 +1,55 @@
-<table border=1>
-    <tr>
-      <td> Sign up for CRM-uv  </td> <td>
-      <a routerLink="/">
-         cancel
-      </a>
-      </td>
-    </tr>
-    <tr>
-      <td colspan=2> Email </td>
-    </tr>
-    
-    <tr>
-     <td colspan=2> <input type="email" [(ngModel)]="myPayloadUser.email" >  </td>
-    </tr>
-    
-    <tr>
-    <td> First Name </td> <td> Last Name  </td>
-    </tr>
-    
-    <tr>
-    <td>  <input type="text" [(ngModel)]="myPayloadUser.firstName" name="firstName" >  </td>
-     <td> <input type="text" [(ngModel)]="myPayloadUser.lastName">  </td>
-    </tr>
-    
-    <tr>
-    <td colspan=2> Password </td>   
-    </tr>
-    <tr colspan=2>
-    <td>  <input type="password" [(ngModel)]="myPayloadUser.password">  </td>
-    </tr>
-    
-    
-    <tr>
-     <td colspan=2 >
-    
-       Please provide a password of at least 8 chars
-    
-    </td>
-    </tr>
-    <tr>
-    <td colspan=2> 
-       <input type="checkbox"> I have read and agree to CRM-univ ...
-     </td>
-    </tr>
-    <tr>
-     <td></td> <td> 
-      <button (click)="createUser()"> 
-           create
-      </button>
-    
-     </td>
-    </tr>
-    </table>
-    
+<div class="register-container">
+  <h2>Registro de Usuario</h2>
+
+  <form (ngSubmit)="register()" #registerForm="ngForm" class="register-form">
+    <!-- Username -->
+    <div class="form-group">
+      <label for="username">Nombre de usuario</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        [(ngModel)]="newUser.username"
+        required
+        class="form-control"
+        autocomplete="off"
+      />
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <label for="email">Correo electrónico</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="newUser.email"
+        required
+        class="form-control"
+        autocomplete="off"
+      />
+    </div>
+
+    <!-- Password -->
+    <div class="form-group">
+      <label for="password">Contraseña</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="newUser.password"
+        required
+        class="form-control"
+        minlength="6"
+      />
+    </div>
+
+    <!-- Botón -->
+    <button type="submit" [disabled]="registerForm.invalid" class="btn btn-primary">
+      Registrarse
+    </button>
+  </form>
+
+  <!-- Mensaje de éxito o error -->
+  <p class="message" *ngIf="message">{{ message }}</p>
+</div>

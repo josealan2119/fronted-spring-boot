@@ -1,0 +1,24 @@
+<div class="tweets-container">
+  <div class="nav-bar">
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a routerLink="/mis-tweets" routerLinkActive="active">Mis Tweets</a>
+  </div>
+
+  <div *ngIf="myTweets.length === 0" class="no-tweets">
+    No tienes tweets aún.
+  </div>
+
+  <ul class="tweet-list">
+    <li *ngFor="let tweet of myTweets" class="tweet-card">
+      <div *ngIf="editingId !== tweet.id" class="tweet-content">
+        <p>{{ tweet.tweet }}</p>
+        <button class="btn edit-btn" (click)="startEditing(tweet)">Editar</button>
+      </div>
+      <div *ngIf="editingId === tweet.id" class="edit-section">
+        <input class="edit-input" [(ngModel)]="editedTweet" />
+        <button class="btn save-btn" (click)="updateTweet()">Guardar</button>
+        <button class="btn cancel-btn" (click)="cancelEdit()">Cancelar</button>
+      </div>
+    </li>
+  </ul>
+</div>

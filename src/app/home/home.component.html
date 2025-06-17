@@ -1,1 +1,79 @@
-<p>home works!</p>
+<p class="welcome">Welcome, <span class="username">{{ username }}</span></p>
+  <div class="nav-bar">
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a routerLink="/mis-tweets" routerLinkActive="active">Mis Tweets</a>
+  </div>
+
+<div class="tweets-container">
+  <!-- Nuevo Tweet -->
+  <section class="new-tweet">
+    <form (ngSubmit)="addTweet()" class="tweet-form">
+      <input
+        type="text"
+        class="tweet-input"
+        placeholder="What's on your mind?"
+        [(ngModel)]="tweetText"
+        name="tweetText"
+        required
+        autocomplete="off"
+      />
+      <button type="submit" class="btn btn-primary">Tweet</button>
+    </form>
+  </section>
+
+  <!-- Lista de Tweets -->
+  <section class="tweets-list">
+    <article *ngFor="let tweet of tweets" class="tweet-card">
+      <header class="tweet-header">
+        <span class="tweet-id">#{{ tweet.id }}</span>
+      </header>
+
+      <p class="tweet-text">{{ tweet.tweet }}</p>
+
+      <!-- Reacciones -->
+      <div class="reactions">
+        <button
+          *ngFor="let rt of reactionTypes"
+          type="button"
+          class="btn btn-reaction"
+          (click)="react(tweet.id, rt.id)"
+          [attr.aria-label]="'React with ' + rt.description"
+        >
+          {{ getEmoji(rt.id) }}
+          <span *ngIf="reactionCounts[tweet.id]?.[rt.description]" class="reaction-count">
+            ({{ reactionCounts[tweet.id][rt.description] }})
+          </span>
+        </button>
+      </div>
+
+      <!-- Comentarios -->
+      <section class="comments">
+        <div *ngFor="let c of commentsMap[tweet.id] || []" class="comment-box">
+          <small class="comment-user">{{ c.user.username }} said:</small>
+          <p class="comment-text">{{ c.content }}</p>
+          <button
+            (click)="removeComment(c.id, tweet.id)"
+            class="btn btn-delete"
+            aria-label="Delete comment"
+            title="Delete comment"
+          >
+            🗑️
+          </button>
+        </div>
+
+        <form (ngSubmit)="addComment(tweet.id)" class="comment-form">
+          <input
+            type="text"
+            placeholder="Add a comment..."
+            [(ngModel)]="newCommentText[tweet.id]"
+            name="comment-{{tweet.id}}"
+            required
+            autocomplete="off"
+            class="comment-input"
+          />
+          <button type="submit" class="btn btn-secondary">Post</button>
+        </form>
+      </section>
+    </article>
+  </section>
+</div>

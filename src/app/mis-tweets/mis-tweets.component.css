@@ -1,0 +1,123 @@
+/* Container principal */
+.tweets-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  background-color: #ffffff;
+  padding: 1.5rem 2rem;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  font-family: 'Inter', sans-serif;
+  color: #0d47a1;
+}
+
+/* Mensaje cuando no hay tweets */
+.no-tweets {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-top: 3rem;
+  color: #1565c0;
+  font-weight: 600;
+}
+
+/* Navegación */
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.nav-bar a {
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-bar a.active,
+.nav-bar a:hover {
+  background-color: #1976d2;
+  color: white;
+}
+
+/* Lista de tweets */
+.tweet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tweet-card {
+  background-color: #f0f5ff;
+  border-radius: 14px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.15);
+}
+
+/* Texto del tweet */
+.tweet-content p {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin: 0 0 1rem 0;
+  color: #0d47a1;
+}
+
+/* Botones */
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  margin-right: 0.5rem;
+}
+
+.edit-btn {
+  background-color: #2196f3;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #1565c0;
+}
+
+.save-btn {
+  background-color: #1976d2;
+  color: white;
+}
+
+.save-btn:hover {
+  background-color: #125ea4;
+}
+
+.cancel-btn {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.cancel-btn:hover {
+  background-color: #bbdefb;
+}
+
+/* Input para editar */
+.edit-input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1.5px solid #bbb;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.edit-input:focus {
+  border-color: #1976d2;
+  outline: none;
+}

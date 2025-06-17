@@ -1,24 +1,21 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
-
+/* Fondo azul claro degradado */
 body {
-   background : #2E9ce6;
-   padding: 3em;
-   font-family: 'Raleway', 'Arial';
-   color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #e3f2fd, #ffffff); /* azul claro a blanco */
+  color: #0d47a1; /* texto azul oscuro */
+  min-height: 100vh;
 }
 
-ul {
-   list-style-type: none;
-   margin: 0 0 2em 0;
-   padding: 0;
-}
-
-ul li {
-   display: inline;
-   margin-right: 30px;
-}
-
-a {
-   color: #0f0;
-   text-decoration: none;
+/* Para asegurarte que el componente raíz ocupa todo */
+app-root {
+  display: block;
+  min-height: 100vh;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  margin: auto;
+  padding: 1rem;
+  max-width: 1200px;
 }
